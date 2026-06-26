@@ -12,8 +12,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/ ./backend/
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 
+# Set working directory to backend so Python module resolution works natively
+WORKDIR /app/backend
+
 # Expose port for the FastAPI server
 EXPOSE 8000
 
 # Run the FastAPI server which also statically serves the built React frontend
-CMD ["uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
