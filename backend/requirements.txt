@@ -4,3 +4,5 @@ httpx
 python-dotenv
 google-generativeai
 howlongtobeatpy
+pyjwt
+bcrypt
