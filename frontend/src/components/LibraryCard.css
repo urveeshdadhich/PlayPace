@@ -1,0 +1,124 @@
+.library-card {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.library-card:hover {
+  background: rgba(0, 210, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 210, 255, 0.2);
+}
+
+.library-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.library-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.game-count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.library-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.library-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.library-list::-webkit-scrollbar-thumb {
+  background: var(--panel-border);
+  border-radius: 4px;
+}
+
+.empty-library {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.library-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.library-item:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.library-cover {
+  width: 40px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.library-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.library-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.library-time {
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.remove-btn {
+  background: rgba(255, 50, 50, 0.2);
+  color: #ff6b6b;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 12px;
+}
+
+.library-item:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: scale(1.1);
+}

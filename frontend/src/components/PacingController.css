@@ -1,0 +1,51 @@
+.pacing-controller h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.toggle-group {
+  display: flex;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.toggle-btn.active {
+  background: var(--panel-border);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slider-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
