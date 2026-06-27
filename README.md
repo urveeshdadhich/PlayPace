@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/hero.jpg" alt="PlayPace Logo" width="250" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);" />
+  <img src="docs/hero-flat.jpg" alt="PlayPace Logo" width="250" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);" />
 </div>
 
 <h1 align="center">PlayPace</h1>
