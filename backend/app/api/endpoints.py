@@ -23,7 +23,7 @@ def get_current_user(authorization: Optional[str] = Header(None)):
     token = authorization.split(" ")[1]
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        return payload["sub"] # returns user_id
+        return int(payload["sub"]) # returns user_id
     except:
         raise HTTPException(status_code=401, detail="Invalid token")
 
@@ -42,7 +42,7 @@ def register(req: AuthRequest):
     user_id = c.lastrowid
     conn.close()
     
-    token = jwt.encode({"sub": user_id}, SECRET_KEY, algorithm=ALGORITHM)
+    token = jwt.encode({"sub": str(user_id)}, SECRET_KEY, algorithm=ALGORITHM)
     return {"token": token}
 
 @router.post("/auth/login")
@@ -56,7 +56,7 @@ def login(req: AuthRequest):
     if not user or not bcrypt.checkpw(req.password.encode('utf-8'), user["password_hash"].encode('utf-8')):
         raise HTTPException(status_code=400, detail="Invalid credentials")
         
-    token = jwt.encode({"sub": user["id"]}, SECRET_KEY, algorithm=ALGORITHM)
+    token = jwt.encode({"sub": str(user["id"])}, SECRET_KEY, algorithm=ALGORITHM)
     return {"token": token}
 
 # --- SYNC ---
